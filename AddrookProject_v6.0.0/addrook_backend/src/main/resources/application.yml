@@ -1,0 +1,4 @@
+########## 配置需要加载的环境配置信息
+spring:
+  profiles:
+    active: dev

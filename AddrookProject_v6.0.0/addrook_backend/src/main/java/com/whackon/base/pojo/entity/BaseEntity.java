@@ -1,0 +1,67 @@
+package com.whackon.base.pojo.entity;
+
+import com.baomidou.mybatisplus.annotation.TableField;
+
+import java.io.Serializable;
+import java.util.Date;
+
+/**
+ * <b></b>
+ *
+ * @author user
+ * @date 2021/12/16
+ * @since
+ */
+public class BaseEntity implements Serializable {
+	private static final long serialVersionUID = 1884146120247768776L;
+	@TableField(exist = false)
+	private String status;                      // 系统状态：0-禁用，1-启用
+	@TableField(exist = false)
+	private String creator;                     // 创建人
+	@TableField(value = "createTime")
+	private Date createTime;                    // 创建时间
+	@TableField(exist = false)
+	private String modifiedBy;                  // 修改人
+	@TableField(value = "modifiedTime")
+	private Date modifiedTime;                  // 修改时间
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getCreator() {
+		return creator;
+	}
+
+	public void setCreator(String creator) {
+		this.creator = creator;
+	}
+
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	public String getModifiedBy() {
+		return modifiedBy;
+	}
+
+	public void setModifiedBy(String modifiedBy) {
+		this.modifiedBy = modifiedBy;
+	}
+
+	public Date getModifiedTime() {
+		return modifiedTime;
+	}
+
+	public void setModifiedTime(Date modifiedTime) {
+		this.modifiedTime = modifiedTime;
+	}
+}

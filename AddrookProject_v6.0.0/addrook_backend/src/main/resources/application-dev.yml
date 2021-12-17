@@ -1,0 +1,45 @@
+### 设置开发环境配置信息
+### 设置项目启用端口号
+server:
+  port: 9999
+spring:
+  ### 配置项目应用名
+  application:
+    name: addrook_backend
+  ### 其中 Spring Boot Bean id 的 Override 机制
+  main:
+    allow-bean-definition-overriding: true
+  ### 配置 JDBC 连接信息
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/addrook_db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+    ### 配置使用的数据库连接池为 Druid
+    type: com.alibaba.druid.pool.DruidDataSource
+    ### 配置 Druid 连接池信息
+    druid:
+      min-idle: 3
+      max-active: 15
+      initial-size: 5
+      min-evictable-idle-time-millis: 30000
+      max-evictable-idle-time-millis: 60000
+      ### 配置 Druid 数据连接监控系统配置
+      web-stat-filter:
+        ### 开启 Druid 数据连接监控系统
+        enabled: true
+        ### 配置监控系统所需要监控的 URL 请求路径格式
+        url-pattern: /*
+        ### 配置对于哪些请求不需要进行监控
+        exclusions: /druid/*, *.js, *.gif, *.jpg, *.png, *.css, *.ico
+      ### 配置 Druid 监控系统的网页信息
+      stat-view-servlet:
+        ### 开启监控系统网页
+        enabled: true
+        ### 配置监控系统登录 URL
+        url-pattern: /druid/*
+        ### 配置登录监控系统的用户名和密码
+        login-username: druid
+        login-password: 123456
+        ### 禁止监控系统重置系统数据
+        reset-enable: false

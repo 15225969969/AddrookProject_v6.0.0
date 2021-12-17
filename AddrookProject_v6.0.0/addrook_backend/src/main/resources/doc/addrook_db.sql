@@ -1,0 +1,1 @@
+-- 数据表字段：id, name, cellphone, address, createTime, modifiedTime
